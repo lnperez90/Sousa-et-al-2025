@@ -1,0 +1,29 @@
+# 10X Spatial transcriptomics 
+# Step 1: Creating a custon reference:
+    # Step 1.1:  Filter the GTF
+
+ spaceranger mkgtf "Full annotation GTF (input)" \
+"Filtered output GTF" \
+--attribute="choose your"
+
+    # Step 1.2: C Build the Reference
+
+spaceranger mkref \
+--genome="Name of the output directory where the reference will be saved" \
+--fasta="The genome FASTA file for your species" \
+--genes="The filtered GTF file" \
+--nthreads="Set CPU usage"
+
+
+# Step 2: Run Spatial Gene Expression Analysis
+spaceranger count \
+  --id="Name of output folder where results will be written" \
+  --transcriptome="Path to the reference generated using" \
+  --sample="Prefix of the FASTQ files. Spaceranger will match it with file names" \
+  --fastqs="Directory containing your FASTQ files" \
+  --image="Path to the brightfield tissue image (TIFF)" \
+  --slide="Slide serial number (printed on the slide)" \
+  --area="Capture area ID (A1, B1, etc)" \
+  --localcores="Set CPU usage" \
+  --localmem="Set RAM usage"\
+
