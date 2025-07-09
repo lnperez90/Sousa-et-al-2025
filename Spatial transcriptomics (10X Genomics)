@@ -1,4 +1,4 @@
-# 10X Spatial transcriptomics 
+# Spatial transcriptomics (10X Genomics) 
 
 # Step 1: Creating a custon reference:
     # Step 1.1:  Filter the GTF
@@ -29,3 +29,5 @@ spaceranger count \
   --localcores="Set CPU usage" \
   --localmem="Set RAM usage"\
 
+#Step 3: Downstream analysis
+Data visualization and generation of specific gene expression images were performed using Loupe Browser 8.0.0
