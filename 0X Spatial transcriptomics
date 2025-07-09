@@ -1,4 +1,5 @@
 # 10X Spatial transcriptomics 
+
 # Step 1: Creating a custon reference:
     # Step 1.1:  Filter the GTF
 
@@ -16,6 +17,7 @@ spaceranger mkref \
 
 
 # Step 2: Run Spatial Gene Expression Analysis
+
 spaceranger count \
   --id="Name of output folder where results will be written" \
   --transcriptome="Path to the reference generated using" \
